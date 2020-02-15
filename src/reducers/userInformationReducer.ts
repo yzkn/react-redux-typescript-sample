@@ -12,9 +12,16 @@ const initialState: UserInfoState = {
 export const userInfomationReducer = reducerWithInitialState(initialState).case(
   changeUserName,
   (state, userInfo) => {
-    return {
-      ...state,
-      name: userInfo.name,
-    };
+    if (typeof userInfo !== 'undefined' && 'name' in userInfo) {
+      return {
+        ...state,
+        name: userInfo.name,
+      };
+    } else {
+      return {
+        ...state,
+        name: state.name,
+      };
+    }
   }
 );

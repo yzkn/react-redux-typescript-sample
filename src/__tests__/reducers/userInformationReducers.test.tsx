@@ -10,7 +10,7 @@ describe('Reducerのテスト', () => {
         type: 'CHANGE_USER_NAME',
       })
     ).toEqual({
-      name: 'changed',
+      name: 'hogehoge',
     });
   });
 });

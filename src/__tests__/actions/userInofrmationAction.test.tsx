@@ -12,6 +12,9 @@ describe('UserInformationActionのテスト', () => {
     const store = mockStore();
     store.dispatch(changeUserNameAsync('aaaa'));
     expect(store.getActions()[0]).toEqual({
+      payload: {
+        name: 'aaaa',
+      },
       type: 'CHANGE_USER_NAME',
     });
   });
